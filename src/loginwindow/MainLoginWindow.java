@@ -24,7 +24,7 @@ public class MainLoginWindow extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabelMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelMessage.setText("Press Login! button to enter data...");
+        jLabelMessage.setText("Press button to enter data...");
 
         jButtonPrihlasitSe.setText("Login!");
         jButtonPrihlasitSe.addActionListener(new java.awt.event.ActionListener() {
