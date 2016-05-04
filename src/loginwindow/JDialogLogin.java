@@ -1,10 +1,10 @@
 // this is modal jDialog windows for entering login and password
-
 package loginwindow;
 
 public class JDialogLogin extends javax.swing.JDialog {
 
-    public String login;
+    private boolean wanttologin = false;
+
     /**
      * Creates new form NewJDialog
      */
@@ -16,11 +16,15 @@ public class JDialogLogin extends javax.swing.JDialog {
     public String getLogin() {
         return jTextFieldLogin.getText();
     }
-    
+
     public String getPass() {
         return String.valueOf(jPasswordFieldPass.getPassword());
     }
-    
+
+    public boolean isWantToLogin() {
+        return wanttologin;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -129,7 +133,8 @@ public class JDialogLogin extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
-        // hide dialog window
+        // user wants to login -> hide dialog window
+        wanttologin = true;
         this.dispose();
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
@@ -144,9 +149,7 @@ public class JDialogLogin extends javax.swing.JDialog {
     }//GEN-LAST:event_jPasswordFieldPassActionPerformed
 
     private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
-        // cancel button has been pressed -> clear input fields
-        jTextFieldLogin.setText("");
-        jPasswordFieldPass.setText("");
+        // user pressed Cancel button
         this.dispose();
     }//GEN-LAST:event_jButtonCancelActionPerformed
 

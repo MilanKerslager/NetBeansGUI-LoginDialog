@@ -1,7 +1,8 @@
 // Create dialog for entering login information
 // Pass info from login modal JDialog window to the parent window
-
 package loginwindow;
+
+import java.awt.Color;
 
 public class MainLoginWindow extends javax.swing.JFrame {
 
@@ -60,11 +61,22 @@ public class MainLoginWindow extends javax.swing.JFrame {
 
     private void jButtonPrihlasitSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPrihlasitSeActionPerformed
         // create object from JDialog class (prepared as Swing form)
-        JDialogLogin loginDialog = new JDialogLogin(this, true);
+        JDialogLogin lgd = new JDialogLogin(this, true);
         // display it
-        loginDialog.setVisible(true);
+        lgd.setVisible(true);
         // after windows disappear, grab entered data and write them out
-        jLabelMessage.setText("login: " + loginDialog.getLogin() + ", password: " + loginDialog.getPass());
+        System.out.println("login: " + lgd.getLogin()
+                + ", password: " + lgd.getPass()
+                + ", wantologin: "+lgd.isWantToLogin());
+        if (lgd.isWantToLogin()
+                && lgd.getLogin().equals("Huzva")
+                && lgd.getPass().equals("123")) {
+            jLabelMessage.setForeground(Color.black);
+            jLabelMessage.setText("Login succesfull");
+        } else {
+            jLabelMessage.setForeground(Color.red);
+            jLabelMessage.setText("Login failed");
+        }
     }//GEN-LAST:event_jButtonPrihlasitSeActionPerformed
 
     /**
