@@ -64,14 +64,14 @@ public class MainLoginWindow extends javax.swing.JFrame {
         // create object from JDialog class (prepared as Swing form)
         JDialogLogin lgd = new JDialogLogin(this, true);
         // enable close on Escape feature on modal window JDialogLogin
-        lgd.installEscapeCloseOperation(lgd);
+        JDialogLogin.installEscapeCloseOperation(lgd);
         // display the modal window
         lgd.setVisible(true);
         // after modal window disappear, grab entered data and write them out
         System.out.println("login: " + lgd.getLogin()
                 + ", password: " + lgd.getPass()
                 + ", wantologin: "+lgd.isWantToLogin());
-        // is provided login/pass valid (WantToLogin & match desired value)?
+        // valid login/pass? (WantToLogin & match desired value)
         if (lgd.isWantToLogin()
                 && lgd.getLogin().equals("Huzva")
                 && lgd.getPass().equals("123")) {
