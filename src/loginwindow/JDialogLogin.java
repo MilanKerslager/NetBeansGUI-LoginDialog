@@ -26,14 +26,18 @@ public class JDialogLogin extends javax.swing.JDialog {
         initComponents();
     }
 
+    // returns login name provided by the user
     public String getLogin() {
         return jTextFieldLogin.getText();
     }
 
+    // returns password provided by the user
     public String getPass() {
         return String.valueOf(jPasswordFieldPass.getPassword());
     }
 
+    // if true, user clicked <Login> button
+    // if false -> <Cancel> button, Escape key or window closed by mouse
     public boolean isWantToLogin() {
         return wanttologin;
     }
@@ -170,7 +174,7 @@ public class JDialogLogin extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
-        // user wants to login -> hide dialog window
+        // user wants to login (clicked <Login> button) -> hide dialog window
         wanttologin = true;
         this.dispose();
     }//GEN-LAST:event_jButtonLoginActionPerformed

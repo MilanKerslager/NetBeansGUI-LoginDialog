@@ -1,5 +1,5 @@
-// Create dialog for entering login information
-// Pass info from login modal JDialog window to the parent window
+// Program to create dialog in separate window for entering login information
+// Program is passing info from login modal JDialog window to the parent window
 
 package loginwindow;
 
@@ -63,14 +63,15 @@ public class MainLoginWindow extends javax.swing.JFrame {
     private void jButtonPrihlasitSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPrihlasitSeActionPerformed
         // create object from JDialog class (prepared as Swing form)
         JDialogLogin lgd = new JDialogLogin(this, true);
-        // enable close on Escape keypress
+        // enable close on Escape feature on modal window JDialogLogin
         lgd.installEscapeCloseOperation(lgd);
-        // display it
+        // display the modal window
         lgd.setVisible(true);
-        // after windows disappear, grab entered data and write them out
+        // after modal window disappear, grab entered data and write them out
         System.out.println("login: " + lgd.getLogin()
                 + ", password: " + lgd.getPass()
                 + ", wantologin: "+lgd.isWantToLogin());
+        // is provided login/pass valid (WantToLogin & match desired value)?
         if (lgd.isWantToLogin()
                 && lgd.getLogin().equals("Huzva")
                 && lgd.getPass().equals("123")) {
