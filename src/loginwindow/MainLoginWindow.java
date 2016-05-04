@@ -60,11 +60,13 @@ public class MainLoginWindow extends javax.swing.JFrame {
 
     private void jButtonPrihlasitSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPrihlasitSeActionPerformed
         // create object from JDialog class (prepared as Swing form)
-        JDialogLogin loginDialog = new JDialogLogin(this, true);
+        JDialogLogin lgd = new JDialogLogin(this, true);
+        // enable close on Escape keypress
+        lgd.installEscapeCloseOperation(lgd);
         // display it
-        loginDialog.setVisible(true);
+        lgd.setVisible(true);
         // after windows disappear, grab entered data and write them out
-        jLabelMessage.setText("login: " + loginDialog.getLogin() + ", password: " + loginDialog.getPass());
+        jLabelMessage.setText("login: " + lgd.getLogin() + ", password: " + lgd.getPass());
     }//GEN-LAST:event_jButtonPrihlasitSeActionPerformed
 
     /**
