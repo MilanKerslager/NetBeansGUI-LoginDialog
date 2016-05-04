@@ -1,5 +1,6 @@
 // Create dialog for entering login information
 // Pass info from login modal JDialog window to the parent window
+
 package loginwindow;
 
 import java.awt.Color;
@@ -62,6 +63,8 @@ public class MainLoginWindow extends javax.swing.JFrame {
     private void jButtonPrihlasitSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPrihlasitSeActionPerformed
         // create object from JDialog class (prepared as Swing form)
         JDialogLogin lgd = new JDialogLogin(this, true);
+        // enable close on Escape keypress
+        lgd.installEscapeCloseOperation(lgd);
         // display it
         lgd.setVisible(true);
         // after windows disappear, grab entered data and write them out
